@@ -1,0 +1,141 @@
+<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+	<td class="center  sorting_1" style="width: 100px;">
+		BAA00006
+	</td>
+	<td class="left ">
+		Tâm lý đại cương
+	</td>
+	<td class="left " style="width: 120px;">
+		19_1
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T6(1-2.5)
+	</td>
+	<td class="center " style="width: 120px;">
+		20/04/2020
+	</td>
+</tr>
+<tr class="even">
+	<td class="center  sorting_1" style="width: 100px;">
+		BAA00103
+	</td>
+	<td class="left ">
+		Chủ nghĩa xã hội khoa học
+	</td>
+	<td class="left " style="width: 120px;">
+		19TTH1
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T7(6-9)
+	</td>
+	<td class="center " style="width: 120px;">
+		20/04/2020
+	</td>
+</tr>
+<tr class="odd">
+	<td class="center  sorting_1" style="width: 100px;">
+		BAA00104
+	</td>
+	<td class="left ">
+		Lịch sử Đảng Cộng sản Việt Nam
+	</td>
+	<td class="left " style="width: 120px;">
+		19TTH2
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T4(1-4)
+	</td>
+	<td class="center " style="width: 120px;">
+		TBSau
+	</td>
+</tr>
+<tr class="even">
+	<td class="center  sorting_1" style="width: 100px;">
+		ENV00001
+	</td>
+	<td class="left ">
+		Môi trường đại cương
+	</td>
+	<td class="left " style="width: 120px;">
+		19DCH1
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T2(6-9)
+	</td>
+	<td class="center " style="width: 120px;">
+		20/04/2020
+	</td>
+</tr>
+<tr class="odd">
+	<td class="center  sorting_1" style="width: 100px;">
+		MTH00055
+	</td>
+	<td class="left ">
+		Cơ sở lập trình
+	</td>
+	<td class="left " style="width: 120px;">
+		19TTH1
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T2(1-4)
+	</td>
+	<td class="center " style="width: 120px;">
+		04/05/2020
+	</td>
+</tr>
+<tr class="even">
+	<td class="center  sorting_1" style="width: 100px;">
+		MTH00055
+	</td>
+	<td class="left ">
+		Cơ sở lập trình
+	</td>
+	<td class="left " style="width: 120px;">
+		19TTH1B
+	</td>
+	<td class="center " style="width: 80px;">
+		TH
+	</td>
+	<td class="left " style="width: 240px;">
+		T3(1-2.5)-P.cs2:PMT_NÐH4.2
+	</td>
+	<td class="center " style="width: 120px;">
+		16/03/2020
+	</td>
+</tr>
+<tr class="odd">
+	<td class="center  sorting_1" style="width: 100px;">
+		PHY00001
+	</td>
+	<td class="left ">
+		Vật lý đại cương 1 (Cơ-nhiệt)
+	</td>
+	<td class="left " style="width: 120px;">
+		19CTT2
+	</td>
+	<td class="center " style="width: 80px;">
+		LT
+	</td>
+	<td class="left " style="width: 240px;">
+		T6(6-9)
+	</td>
+	<td class="center " style="width: 120px;">
+		20/04/2020
+	</td>
+</tr>
+</tbody>
