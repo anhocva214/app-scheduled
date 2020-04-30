@@ -1,7 +1,7 @@
 var cron = require("node-cron");
-const login = require("facebook-chat-api");
 var parse = require("node-html-parser");
 var fs = require("fs");
+var nodemailer = require("nodemailer");
 
 var read_input = () =>
   new Promise((resolve, reject) => {
@@ -11,14 +11,14 @@ var read_input = () =>
   });
 
 read_input()
-  .then(data => {
+  .then((data) => {
     // console.log(data);
     const root = parse.parse(data);
     var list_task_old = root.querySelectorAll(".odd");
     var list_task_even = root.querySelectorAll(".even");
     // console.log(list_task[0].childNodes[1].childNodes[0].rawText);
     var list = [];
-    list_task_old.forEach(element => {
+    list_task_old.forEach((element) => {
       var item = [];
       for (var i = 1; i <= 11; i = i + 2) {
         item.push(element.childNodes[i].childNodes[0].rawText.trim());
@@ -26,7 +26,7 @@ read_input()
       list.push(item);
     });
 
-    list_task_even.forEach(element => {
+    list_task_even.forEach((element) => {
       var item = [];
       for (var i = 1; i <= 11; i = i + 2) {
         item.push(element.childNodes[i].childNodes[0].rawText.trim());
@@ -35,9 +35,9 @@ read_input()
     });
     return list;
   })
-  .then(list => {
+  .then((list) => {
     // Method
-    var time = str => {
+    var time = (str) => {
       var time = {};
       time.date = str.slice(0, 2);
       var s = str.indexOf("(");
@@ -47,7 +47,7 @@ read_input()
       return time;
     };
 
-    var date_process = str => {
+    var date_process = (str) => {
       switch (str) {
         case "T2":
           return 1;
@@ -66,7 +66,7 @@ read_input()
       }
     };
 
-    var clock_process = str => {
+    var clock_process = (str) => {
       var clock = str.split("-")[0];
       switch (clock) {
         case "1":
@@ -100,38 +100,46 @@ read_input()
 
     // End Method
 
-    list.forEach(element => {
+    list.forEach((element) => {
       element.push(time(element[4]));
     });
 
     // console.log(list);
 
-    list.forEach(element => {
+    list.forEach((element) => {
       // console.log(element);
       var date = date_process(element[6].date);
       var clock = clock_process(element[6].clock);
-      var set_time = "* "+clock+" * * * "+date;
+      var set_time = "* " + clock + " * * * " + date;
       var message = "";
-      element.forEach((ele, ind)=>{
-        if (ind<6)
-        message = message + ele + "\n";
-      })
-      cron.schedule(set_time, () => {
-          login({email: "0326255330", password: "12211221"}, (err, api) => {
-            if(err) return console.error(err);
-            api.sendMessage(message, "100015834401721");
-          });
+      element.forEach((ele, ind) => {
+        if (ind < 6) message = message + ele + "\n";
       });
+      cron.schedule(set_time, () => {
+        const transporter = nodemailer.createTransport({
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false,
+          auth: {
+            user: "tackecon1551@gmail.com",
+            pass: "anho2001vnnt",
+          },
+        });
 
+        var mailOptions = {
+          from: "tackecon1551@gmail.com",
+          to: "anhocva214@gmail.com",
+          subject: "Đến giờ học",
+          text: "Hello world",
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+          if (error) {
+            console.log(error);
+          } else {
+            console.log("Email sent: " + info.response);
+          }
+        });
+      });
     });
   });
-
-// var task = cron.schedule('* * * * * *', () => {
-//   console.log('running a task every minute');
-//   login({email: "0326255330", password: "12211221"}, (err, api) => {
-//     if(err) return console.error(err);
-//     api.sendMessage("hello world", "100015834401721");
-//   });
-// });
-
-// setTimeout(()=>{task.stop()}, 1000)
